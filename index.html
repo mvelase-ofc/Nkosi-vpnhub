@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>NKOSI Technology</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+
+body{
+  font-family:Poppins,sans-serif;
+  background:
+    linear-gradient(120deg,rgba(0,0,0,.65),rgba(0,0,0,.85)),
+    url("https://files.catbox.moe/80rulh.jpg") center/cover fixed;
+  color:#fff;
+}
+
+/* HEADER BIG BANNER */
+header{
+  text-align:center;
+  padding:25px 20px 25px;
+}
+.main-banner{
+  max-width:1000px;
+  margin:20px auto;
+  padding:25px;
+  border-radius:18px;
+  background:#0b0f15;
+  color:#fff;
+  font-family:Orbitron;
+  font-weight:700;
+  text-align:center;
+  position:relative;
+  border: 3px solid #2196f3;
+  box-shadow:0 0 25px rgba(33,150,243,.6);
+}
+
+.main-banner h1{
+  font-size:2.8rem;
+  margin:0;
+}
+
+/* HEADER TEXT BELOW BANNER */
+header p{
+  max-width:760px;
+  margin:12px auto;
+  opacity:.9;
+}
+
+/* STATS BARS DARKER STYLE */
+.stats{
+  max-width:1000px;
+  margin:10px auto 25px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
+  gap:12px;
+  padding:0 20px;
+}
+.stat{
+  background: linear-gradient(135deg, #0b0f15, #001c33);
+  padding:10px;
+  border-radius:12px;
+  text-align:center;
+  font-weight:500;
+  box-shadow:0 0 20px rgba(33,150,243,.6);
+  font-size:0.85rem;
+  color:#fff;
+}
+
+/* BANNERS */
+.banner{
+  max-width:1000px;
+  margin:25px auto;
+  padding:18px;
+  border-radius:18px;
+  background:linear-gradient(135deg,#0b0f15,#001c33);
+  text-align:center;
+  box-shadow:0 0 25px rgba(33,150,243,.6);
+}
+.banner span{opacity:.9;font-size:.95rem;}
+
+/* LIVE VPN SERVER BLINK */
+.live-banner{
+  max-width:1000px;
+  margin:15px auto;
+  padding:14px;
+  text-align:center;
+  font-weight:600;
+  font-family:Orbitron;
+  border-radius:14px;
+  background:#0d47a1;
+  color:#fff;
+  box-shadow:0 0 20px rgba(33,150,243,.6);
+  animation: liveBlink 1s infinite alternate;
+}
+@keyframes liveBlink{
+  0%{opacity:1;}
+  50%{opacity:0.4;}
+  100%{opacity:1;}
+}
+
+/* VPN CARDS */
+.container{
+  max-width:1000px;
+  margin:30px auto;
+  padding:20px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:25px;
+}
+.card{
+  background:rgba(255,255,255,.08);
+  backdrop-filter:blur(14px);
+  border-radius:20px;
+  padding:25px;
+  border:1px solid rgba(33,150,243,.6);
+  box-shadow:0 0 25px rgba(33,150,243,.5);
+  position:relative;
+  transition: all 0.3s ease;
+}
+.card:hover{
+  transform:scale(1.04);
+  box-shadow:0 0 35px rgba(33,150,243,.9);
+}
+.card h3{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  font-family:Orbitron;
+  color:#4fc3ff;
+}
+.card a{
+  display:block;
+  margin-top:15px;
+  text-align:center;
+  padding:14px;
+  background:linear-gradient(135deg,#0d47a1,#2196f3);
+  border-radius:14px;
+  color:#fff;
+  text-decoration:none;
+  font-weight:600;
+}
+
+/* GREEN DOT (LIVE) ON VPN CARDS */
+.dot-card{
+  width:10px;height:10px;
+  background:#00e676;
+  border-radius:50%;
+  box-shadow:0 0 10px #00e676;
+  animation: dotBlink 1s infinite;
+  display:inline-block;
+}
+@keyframes dotBlink{0%{opacity:1;}50%{opacity:0.4;}100%{opacity:1;}}
+
+/* CLOUD BANNER COLUMNS */
+.cloud{
+  max-width:1000px;
+  margin:25px auto;
+  padding:20px;
+  border-radius:20px;
+  background:#0b0f15;
+  border:1px solid #2196f3;
+  box-shadow:0 0 30px rgba(33,150,243,.5);
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+.cloud div{
+  font-weight:500;
+  font-size:1rem;
+}
+.cloud div b{
+  color:#4fc3ff; /* all values after : in blue like Owner */
+}
+
+/* QUOTE */
+.quote{
+  max-width:1000px;
+  margin:30px auto;
+  padding:18px;
+  background:linear-gradient(135deg,#001c33,#0d47a1);
+  border-radius:18px;
+  text-align:center;
+  font-style:italic;
+  box-shadow:0 0 25px rgba(33,150,243,.6);
+  font-size:0.95rem;
+}
+
+/* CHANNEL & CONTACT */
+.channel{
+  max-width:1000px;
+  margin:30px auto;
+  padding:18px;
+  background:#0b0f15;
+  border-radius:18px;
+  text-align:center;
+  border:1px solid #2196f3;
+}
+.channel a{
+  display:inline-block;
+  margin-top:10px;
+  padding:12px 20px;
+  background:#2196f3;
+  color:#fff;
+  border-radius:12px;
+  text-decoration:none;
+  font-weight:600;
+}
+.contact{
+  max-width:1000px;
+  margin:30px auto;
+  text-align:center;
+}
+.contact p{opacity:.85;margin-bottom:12px}
+.icon{
+  width:52px;
+  height:52px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:50%;
+  margin:0 10px;
+  font-size:1.4rem;
+  color:#fff;
+  text-decoration:none;
+  box-shadow:0 0 20px rgba(0,0,0,.6);
+}
+.icon.whatsapp{background:#25D366;}
+.icon.telegram{background:#229ED9;}
+
+footer{text-align:center;padding:20px;opacity:.7;}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="main-banner">
+    <h1>Nkosi Technology</h1>
+  </div>
+  <p>Secure Zimbabwe VPN files, professionally maintained by Nkosi.</p>
+</header>
+
+<div class="stats">
+  <div class="stat">🔐 𝖲𝖾𝖼𝗎𝗋𝖾𝖽 𝖨𝗇𝗍𝖾𝗋𝗇𝖾𝗍 𝖠𝖼𝖼𝖾𝗌𝗌</div>
+  <div class="stat">⚡ 𝖥𝖺𝗌𝗍 𝖲𝗉𝖾𝖾𝖽𝗌 & 𝖣𝗈𝗐𝗇𝗅𝗈𝖺𝖽𝗌</div>
+  <div class="stat">📦 𝖵𝖯𝖭𝖲: ８</div>
+  <div class="stat">🌏 𝖴𝗇𝗅𝗂𝗆𝗂𝗍𝖾𝖽 𝖨𝗇𝗍𝖾𝗋𝗇𝖾𝗍</div>
+  <div class="stat">📶 ２４/７ 𝗋𝗎𝗇𝗇𝗂𝗇𝗀</div>
+  <div class="stat">🚫 𝖭𝗈 𝖳𝗈𝗋𝗋𝖾𝗇𝗍 Downloading</div>
+</div>
+
+<div class="banner">
+  <b> 𝖥𝗂𝗅𝖾𝗌 𝖼𝗋𝖾𝖺𝗍𝖾𝖽 𝖻𝗒 𝖭𝗄𝗈𝗌𝗂 𝖳𝖾𝖼𝗁𝗇𝗈𝗅𝗈𝗀𝗒</b><br>
+  <span>Trusted configurations for Zimbabwe networks</span>
+</div>
+
+<div class="live-banner">LIVE VPN SERVER</div>
+
+<div class="cloud">
+  <div>☁️ Latency: <b>7ms</b></div>
+  <div>👤 Owner: <b>Nkosi</b></div>
+  <div>⏱️ Uptime: <b><span id="uptime">0s</span></b></div>
+  <div>🔋 User Battery: <b><span id="battery">Detecting...</span></b></div>
+  <div>👁️ Web Views: <b><span id="webviews">1</span></b></div>
+</div>
+
+<div class="container" id="vpnList"></div>
+
+<div class="quote" id="quote">“Technology is best when it brings freedom — fast, secure, and reliable access.”</div>
+
+<div class="channel">
+  Follow our channel for latest VPN updates, files passwords & alerts
+  <br>
+  <a href="https://whatsapp.com/channel/0029VbC2ztk2f3">Join WhatsApp Channel</a>
+</div>
+
+<div class="contact">
+  <p>Contact Nkosi for private VPN files & premium access</p>
+  <a href="https://wa.me/message/GOUFAUNTOUDVA1" class="icon whatsapp"><i class="fab fa-whatsapp"></i></a>
+  <a href="https://t.me/khulekanidube" class="icon telegram"><i class="fab fa-telegram-plane"></i></a>
+</div>
+
+<footer>
+  © 2026 – 2999 | Nkosi Technology 
+</footer>
+
+<script>
+const CATBOX_LINK = "https://files.catbox.moe/u8wrqn.zip";
+
+/* VPN LIST */
+let vpns = [
+ {name:"HA Tunnel",link:CATBOX_LINK},
+ {name:"Stark VPN Reloaded",link:CATBOX_LINK},
+ {name:"Link Layer",link:CATBOX_LINK},
+ {name:"NPV Tunnel",link:CATBOX_LINK},
+ {name:"HTTP Injector",link:CATBOX_LINK},
+ {name:"HTTP Custom",link:CATBOX_LINK},
+ {name:"Tik Tunnel",link:CATBOX_LINK},
+ {name:"Socks Ip Tunnel",link:CATBOX_LINK},
+ {name:"V2Box",link:CATBOX_LINK}
+];
+
+const listEl=document.getElementById("vpnList");
+
+function render(){
+ listEl.innerHTML="";
+ vpns.forEach((v)=>{
+  listEl.innerHTML+=`
+   <div class="card">
+    <h3><span class="dot-card"></span>${v.name}</h3>
+    <a href="${v.link}" download>DOWNLOAD</a>
+   </div>`;
+ });
+}
+render();
+
+/* UPTIME */
+let start=Date.now();
+setInterval(()=>{
+ let s=Math.floor((Date.now()-start)/1000);
+ document.getElementById("uptime").textContent=s+"s";
+},1000);
+
+/* BATTERY */
+if(navigator.getBattery){
+ navigator.getBattery().then(b=>{
+  function update(){
+   document.getElementById("battery").textContent=Math.round(b.level*100)+"%";
+  }
+  update();
+  b.addEventListener("levelchange",update);
+ });
+}
+
+/* WEB VIEWS */
+let views = parseInt(localStorage.getItem('webviews')) || 1;
+views++;
+localStorage.setItem('webviews', views);
+document.getElementById('webviews').textContent = views;
+
+/* ROTATING QUOTES */
+const quotes = [
+ "Technology is best when it brings freedom — fast, secure, and reliable access.",
+ "VPNs should be fast, safe, and professionally maintained.",
+ "Nkosi delivers trusted configurations for Zimbabwe networks.",
+ "Secure, reliable, and easy-to-use VPN solutions."
+];
+let qIndex = 0;
+setInterval(()=>{
+  document.getElementById('quote').textContent = quotes[qIndex];
+  qIndex = (qIndex +1) % quotes.length;
+},5000);
+</script>
+
+</body>
+</html>
